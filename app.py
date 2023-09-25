@@ -17,7 +17,6 @@ def test():
 def svamp():
     return "<p> Hello, Svampälskare. </p>"
 
-
 @app.route("/test2")
 def test2():
     return 'Another test'
