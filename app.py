@@ -19,7 +19,7 @@ def svamp():
 
 @app.route("/test2")
 def test2():
-    return 'Another test'
+    return '<p> Another test <p>'
 
 
 # my comment
