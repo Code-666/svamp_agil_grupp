@@ -27,5 +27,13 @@ def mj_test():
     return render_template("mj_test.html")
 
 
+@app.route("/mainpage")
+def mainpage():
+    """
+    ...
+    """
+    return render_template("mainpage.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
