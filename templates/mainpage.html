@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SvampPro</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+
+</head>
+<body>
+    <header>
+        <h1>SvampPro</h1>
+        <input type="text" id="searchInput" placeholder="Sök efter beskrivning...">
+        <button onclick="search()">Sök</button>
+    </header>
+    <main>
+        <div id="champinonesList" class="champinones-container"></div>
+    </main>
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="{{ url_for('static', filename='my_script.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+</html>
