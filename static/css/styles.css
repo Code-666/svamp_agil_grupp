@@ -4,7 +4,9 @@ header {
     text-align: center;
     padding: 20px;
 }
-
+body{
+    background-color: #FAD6A5;
+}
 h1 {
     font-size: 36px;
     margin: 0;
