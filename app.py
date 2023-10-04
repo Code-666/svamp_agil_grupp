@@ -48,7 +48,7 @@ def add_choice():
     data = data.append(new_row, ignore_index=True)
     data.to_csv('Svampar.csv', index=False)
 
-    return render_template('Page1.html', tables=[data.to_html()], titles=[''])
+    return render_template('mainpage.html', tables=[data.to_html()], titles=[''])
 
 
 
