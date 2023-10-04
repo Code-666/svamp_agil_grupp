@@ -21,7 +21,7 @@
     <script src="{{ url_for('static', filename='my_script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-    <div>
+    <div id="champinonesList" class="champinones-container div">
         <form action="/add-choice" method="POST">
             <input type="text" id="svamp" name="svamp" placeholder="choose name for svamp">
             <input type="text" id="giftig" name="giftig" placeholder="choose status for svamp">
