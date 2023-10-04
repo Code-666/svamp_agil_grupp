@@ -36,7 +36,7 @@ def mainpage():
     """
     return render_template("mainpage.html")
 
-    #Test av inlag av svampar
+#Test av inlag av svampar
 @app.route('/add-choice', methods=['POST'])
 def add_choice():
     name = request.form['svamp']
