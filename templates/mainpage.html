@@ -21,14 +21,15 @@
     <script src="{{ url_for('static', filename='my_script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-    <form action="/add-choice" method="POST">
-        <input type="text" id="svamp" name="svamp" placeholder="choose name for svamp">
-        <input type="text" id="giftig" name="giftig" placeholder="choose status for svamp">
-        <input type="text" id="img_nanm" name="img_nanm" placeholder="choose img_nanm for svamp">
-        <input type="text" id="filter" name="filter" placeholder="choose filter for svamp">
-        <button type="submit">Submit</button>
-    </form>
-
+    <div id="champinonesList" class="champinones-container>
+        <form action="/add-choice" method="POST">
+            <input type="text" id="svamp" name="svamp" placeholder="choose name for svamp">
+            <input type="text" id="giftig" name="giftig" placeholder="choose status for svamp">
+            <input type="text" id="img_nanm" name="img_nanm" placeholder="choose img_nanm for svamp">
+            <input type="text" id="filter" name="filter" placeholder="choose filter for svamp">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
 </body>
 </html>
