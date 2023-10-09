@@ -1,10 +1,12 @@
 header {
-    background-color: #3498db;
+    background-color: #7d3434;
     color: #fff;
     text-align: center;
     padding: 20px;
 }
-
+body{
+    background-color: #FAD6A5;
+}
 h1 {
     font-size: 36px;
     margin: 0;
@@ -33,7 +35,7 @@ div {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    background-color: #fff;
+    background-color: #FAD6A5;
 }
 
 h2 {
@@ -63,7 +65,7 @@ p {
     padding: 10px;
     margin: 10px;
     text-align: center;
-    background-color: #fff;
+    background-color: #F9E0BE;
 }
 
 .champinones-container h2 {
