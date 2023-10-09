@@ -37,6 +37,14 @@ def mainpage():
     """
     return render_template("mainpage.html")
 
+@app.route("/admin")
+def admin():
+
+
+
+    return render_template("admin.html")
+
+
 #Test av inlag av svampar
 @app.route('/add-choice', methods=['POST'])
 def add_choice():
