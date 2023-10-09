@@ -14,13 +14,12 @@ class Mushroom(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True)
     traits = db.Column(db.Text)
-    image = db.relationship("MushroomImage", backref="mushroom", lazy=True)
+    image_data = db.Column(db.LargeBinary)  # New column for image data
 
-
-class MushroomImage(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    image = db.Column(db.LargeBinary)
-    mushroom_id = db.Column(db.Integer, db.ForeignKey("mushroom.name"))
+    def __init__(self, name, traits, image_data=None):
+        self.name = name
+        self.traits = traits
+        self.image_data = image_data
 
 #Sebbe Är bra
 @app.route("/")
@@ -63,10 +62,10 @@ def admin():
 
 @app.route('/add-choice', methods=['POST'])
 def add_choice():
+    file = request.files['image']
     name = request.form['svamp']
-    poison = request.form['giftig']
-    img_name = request.form['img_nanm']
     traits = request.form['filter']
+
     #imgage_file = request.form["myfile"]
     #new_row = {'Name': name, 'Poison': poison, 'Img_name': img_name, 'Traits': traits}
     #data = pd.read_csv("Svampar.csv")
@@ -79,15 +78,16 @@ def add_choice():
 
     # spara imgagen till pathen static/pics
 
-    svamp = Mushroom(name=name, traits=traits)
-    db.session.add(svamp)
+    image_data = file.read()
+    mushroom = Mushroom(name=name, traits=traits, image_data=image_data)
+    db.session.add(mushroom)
     db.session.commit()
-
-    return render_template('mainpage.html')
-
+    return redirect(url_for('admin'))
 
 
 
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
+    app.secret_key = 'your_secret_key'  # Replace with your secret key
     app.run(debug=True)
