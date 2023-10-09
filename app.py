@@ -3,12 +3,20 @@ from flask import Flask
 from flask import render_template, request, flash, redirect, url_for
 import pandas as pd
 import csv
+import base64
 
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
 db = SQLAlchemy(app)
+
+# Define a function to encode binary data in base64
+def base64_encode(data):
+    return base64.b64encode(data).decode('utf-8')
+
+# Register a custom Jinja2 filter for base64 encoding
+app.jinja_env.filters['base64_encode'] = base64_encode
 
 class Mushroom(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -20,6 +28,9 @@ class Mushroom(db.Model):
         self.name = name
         self.traits = traits
         self.image_data = image_data
+
+    def get_image_data(self):
+        return self.image_data
 
 #Sebbe Är bra
 @app.route("/")
@@ -54,10 +65,8 @@ def mainpage():
 
 @app.route("/admin")
 def admin():
-
-
-
-    return render_template("admin.html")
+    mushrooms = Mushroom.query.all()
+    return render_template("admin.html", mushrooms=mushrooms)
 
 
 @app.route('/add-choice', methods=['POST'])

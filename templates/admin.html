@@ -6,6 +6,20 @@
     <title>SvampPro</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <style>
+        /* CSS styles to control image size */
+        .image-container {
+            width: 200px; /* Adjust the width as needed */
+            height: 200px; /* Adjust the height as needed */
+            overflow: hidden;
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 
 </head>
 <body>
@@ -21,6 +35,19 @@
             <br><button type="submit">Submit</button>
 
         </form>
+    </div>
+    <div>
+        <ul>
+        {% for mushroom in mushrooms %}
+            <li>
+                <div class="image-container">
+                    <h2>{{ mushroom.name }}</h2>
+                    <p>Traits: {{ mushroom.traits }}</p>
+                    <img src="data:image/jpeg;base64,{{ mushroom.get_image_data() | base64_encode }}" alt="{{ mushroom.name }}">
+                </div>
+            </li>
+        {% endfor %}
+        </ul>
     </div>
 
 </body>
