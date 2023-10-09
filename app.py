@@ -1,6 +1,7 @@
 # Johns branch
 from flask import Flask
 from flask import render_template, request, flash, redirect, url_for
+import os
 import pandas as pd
 import csv
 import base64
@@ -8,7 +9,7 @@ import base64
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(app.instance_path, 'mydatabase.db')
 db = SQLAlchemy(app)
 
 # Define a function to encode binary data in base64
