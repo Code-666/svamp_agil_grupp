@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Example</title>
+    <style>
+    </style>
+</head>
+<body>
+
+
+  <!-- Here are the beta testing forms fields -->
+  <!-- I have not bother to set default value since this will be changes soon -->
+<div>
+<form method="post">
+  <fieldset>
+    <legend>Color</legend>
+    <input type="radio" id="red" name="color" value="red">
+    <label for="red">Red</label>
+    <input type="radio" id="blue" name="color" value="blue">
+    <label for="blue">Blue</label>
+    <input type="radio" id="green" name="color" value="green">
+    <label for="green">Green</label>
+    <input type="radio" id="other" name="color" value="other">
+    <label for="other">Other</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Size</legend>
+    <input type="radio" id="small" name="size" value="small">
+    <label for="small">Small</label>
+    <input type="radio" id="medium" name="size" value="medium">
+    <label for="medium">Medium</label>
+    <input type="radio" id="big" name="size" value="big">
+    <label for="big">Big</label>
+    <input type="radio" id="other" name="size" value="other">
+    <label for="other">Other</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Shape</legend>
+    <input type="radio" id="circle" name="shape" value="circle">
+    <label for="circle">Circle</label>
+    <input type="radio" id="square" name="shape" value="square">
+    <label for="square">Square</label>
+    <input type="radio" id="triangle" name="shape" value="triangle">
+    <label for="triangle">Triangle</label>
+    <input type="radio" id="other" name="shape" value="other">
+    <label for="other">Other</label>
+  </fieldset>
+
+  <input type="submit" value="Find your mushroom">
+</form>
+</div>
+
+
+
+
+<!--
+    This jinja block checks if a from has just been submitted
+    Then it checks if the images varibles contains any data (if the form got any resutls from the database)
+    If the form got any result then that image is displayed and its made into a hyperlink which when clicked takes the user to the result endpoint/html
+    If the form does not get any results from the database or the user visits the site for the first time, they will see a starter image and get a suitable message (we could use flask's MESSEGES here)
+-->
+{% if form_submitted %}
+  {% if images %}
+    {% for img in images %}
+      <a href="{{ url_for('result',  mushroom_name=name) }}">
+        <img src="data:image/png;base64,{{ img }}" alt="mushroom image">
+      </a>
+    {% endfor %}
+  {% else %}
+    <p>No mushrooms matching your search criteria were found.</p>
+    <img src="{{ url_for('static', filename='pics/svampar.jpg') }}" alt="null search results">
+  {% endif %}
+{% else %}
+  <p>Welcome! Please Search for a mushroom</p>
+  <img src="{{ url_for('static', filename='pics/svampar.jpg') }}" alt="welcome image">
+{% endif %}
+
+</body>
+</html>
+
