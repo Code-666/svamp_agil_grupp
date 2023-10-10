@@ -23,15 +23,18 @@ class Mushroom(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True)
     traits = db.Column(db.Text)
-    image_data = db.Column(db.LargeBinary)  # New column for image data
+    image_data = db.Column(db.LargeBinary)
+    poison = db.Column(db.Boolean, default=False)  # New boolean column for poison
 
-    def __init__(self, name, traits, image_data=None):
+    def __init__(self, name, traits, image_data=None, poison=False):
         self.name = name
         self.traits = traits
         self.image_data = image_data
+        self.poison = poison
 
     def get_image_data(self):
         return self.image_data
+
 
 #Sebbe Är bra
 @app.route("/")
