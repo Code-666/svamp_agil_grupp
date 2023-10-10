@@ -78,11 +78,11 @@ def add_choice():
     file = request.files['image']
     name = request.form['svamp']
     traits = request.form['filter']
-    posion = False
+    poison = True
     if request.form['posion'] == 'True':
-        posion = True
+        poison = True
     elif request.form['posion'] == 'False':
-        posion = False
+        poison = False
 
     #imgage_file = request.form["myfile"]
     #new_row = {'Name': name, 'Poison': poison, 'Img_name': img_name, 'Traits': traits}
@@ -97,7 +97,7 @@ def add_choice():
     # spara imgagen till pathen static/pics
 
     image_data = file.read()
-    mushroom = Mushroom(name=name, traits=traits, image_data=image_data, posion=posion)
+    mushroom = Mushroom(name=name, traits=traits, image_data=image_data, poison=poison)
     db.session.add(mushroom)
     db.session.commit()
     return redirect(url_for('admin'))
