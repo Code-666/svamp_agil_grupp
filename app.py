@@ -79,9 +79,9 @@ def add_choice():
     name = request.form['svamp']
     traits = request.form['filter']
     poison = True
-    if request.form['posion'] == 'True':
+    if request.form['poison'] == 'True':
         poison = True
-    elif request.form['posion'] == 'False':
+    elif request.form['poison'] == 'False':
         poison = False
 
     #imgage_file = request.form["myfile"]
