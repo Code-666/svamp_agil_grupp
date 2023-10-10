@@ -46,6 +46,7 @@
             <li>
                 <div class="image-container">
                     <h2>{{ mushroom.name }}</h2>
+                    <p>{{ mushroom.poison }}</p>
                     <p>Traits: {{ mushroom.traits }}</p>
                     <img src="data:image/jpeg;base64,{{ mushroom.get_image_data() | base64_encode }}" alt="{{ mushroom.name }}">
                 </div>
