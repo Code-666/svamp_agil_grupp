@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>resultat resultat resultat</p>
+    <!-- Shows that mushroom name was successfully transferred from min_svamp endpoint -->
+    <p>{{ mushroom_name }}</p>
+
+
+    <!-- Button back to min_svamp. we could add another button to mainPage -->
+    <a href="{{ url_for('min_svamp') }}"><button>Back to Hitta Min Svamp</button></a>
+
+    <!--
+    Uses the mushroomInfo relatinship to get the info.description text
+    -->
+
+    {% for info in mushroom_instance.info %}
+    <p>{{ info.description }}</p>
+    {% endfor %}
+    
+
+
+</body>
+</html>
