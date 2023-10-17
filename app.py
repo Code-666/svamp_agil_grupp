@@ -97,6 +97,7 @@ def result(mushroom_name):
         "result.html", mushroom_name=mushroom_name, mushroom_instance=mushroom
     )
 
+import ai_routes
 
 if __name__ == "__main__":
     app.run(debug=True)
