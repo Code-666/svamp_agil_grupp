@@ -4,7 +4,6 @@ from models import MushroomFilter, MushroomImage, MushroomInfo, db, app
 from io import BytesIO
 import base64
 from flask_sqlalchemy import SQLAlchemy
-import os
 
 # our main page
 @app.route("/")
@@ -100,5 +99,4 @@ def result(mushroom_name):
 import ai_routes
 
 if __name__ == "__main__":
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
     app.run(debug=True)

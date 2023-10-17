@@ -6,8 +6,11 @@ import numpy as np
 import PIL
 import io
 
+import os
+my_dir = os.path.dirname(__file__)
+file_path = os.path.join(my_dir, 'model/flugVSkant.h5')
 
-model = load_model('model/flugVSkant.h5')
+model = load_model(file_path)
 
 @app.route("/min_svamp_ai")
 def min_svamp_ai():
