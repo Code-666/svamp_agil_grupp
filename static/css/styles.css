@@ -1,81 +1,32 @@
-header {
-    background-color: #3498db;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
-#searchInput {
-    padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-main {
-    padding: 20px;
-}
-
-div {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    background-color: #fff;
-}
-
-h2 {
-    font-size: 24px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
-}
-
-p {
-    font-size: 16px;
-}
-
-/* Stilar för svamplista */
-.champinones-container {
+body {
+    color: #A0A0A0; /* Svart bakgrund */
+    height: 100vh; /* Ange kroppens höjd till 100% av fönstret */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center; /* Centrera vertikalt */
+    align-items: flex-start; /* Vänsterjustera innehållet */
+    margin-left: 50px; /* Lägg till en vänstermarginal om så önskas */
 }
 
-.champinones-container div {
-    flex-basis: calc(30% - 20px); /*Anpassa bredden efter dina behov */
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    background-color: #fff;
+.identifera-svamp {
+    color: red; /* Standard textfärg (röd) */
+    display: block; /* Göra elementen block så att de är under varandra */
+    margin: 10px 0; /* Mellanrum mellan elementen */
+    text-decoration: none; /* Ta bort linjerna under texten */
+    font-size: 100px; /* Större textstorlek (justera värdet efter dina preferenser) */
+    transition: color 0.3s; /* Lägg till en smidig övergång för färgändring */
 }
 
-.champinones-container h2 {
-    font-size: 24px;
+.identifera-svamp:hover {
+    color: #A020F0; /* Ändra färgen till violett vid hovring */
 }
 
-.champinones-container img {
-    max-width: 100%;
-    height: auto;
-    margin: 10px 0;
-}
-
-.champinones-container p {
-    font-size: 16px;
+.svat_vit {
+    filter: grayscale(100%); /* Konvertera bilden till svartvitt */
+    width: 20%;
+    max-width: 50%; /* Justera bildens bredd */
+    position: absolute; /* Placera bilden i absolut position */
+    right: 100; /* Justera den till höger */
+    top: 50; /* Justera den uppåt */
+    opacity: 0.7; /* Ange opacitet för suddningseffekten */
 }
