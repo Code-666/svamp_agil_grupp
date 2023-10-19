@@ -1,1 +1,0 @@
-# svamp_agil_grupp
