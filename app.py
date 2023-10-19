@@ -3,15 +3,22 @@ from tensorflow import keras
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import PIL
+import os
 import io
 
 from tensorflow.keras.models import load_model
+
+my_dir = os.path.dirname(__file__)
+h5_file_path = os.path.join(my_dir, 'flugVSkant.h5')
+print(h5_file_path)
 
 app = Flask(__name__)
 
 @app.route("/")
 def mainpage():
+
     return render_template("min_svamp_ai.html")
+
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
@@ -33,7 +40,7 @@ def upload_image():
             img = image.img_to_array(img)
             img = np.expand_dims(img, axis=0)
 
-            model = load_model('models/flugVSkant.h5')
+            model = load_model(h5_file_path)
 
             # Make a prediction
             prediction = model.predict(img)
@@ -51,6 +58,7 @@ def upload_image():
             return jsonify(result)
         except Exception as e:
             return jsonify({'error': str(e)})
+
 
 if __name__ == '__main__':
     app.run(debug=True)
