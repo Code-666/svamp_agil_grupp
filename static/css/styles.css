@@ -1,6 +1,5 @@
 body {
     color: #A0A0A0; /* Svart bakgrund */
-    height: 100vh; /* Ange kroppens höjd till 100% av fönstret */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centrera vertikalt */
