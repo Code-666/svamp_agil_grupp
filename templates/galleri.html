@@ -16,9 +16,10 @@
         {% endif %}
 
         {% for img in mushroom.bild %}
-        <a href="{{ url_for('result',  mushroom_name=mushroom.namn) }}">
+        <!-- <a href="{{ url_for('result',  mushroom_name=mushroom.namn) }}">
             <img src="data:image/png;base64,{{ img.bild|b64encode|safe }}" alt="mushroom image">
-        </a>
+        </a> -->
+        <img src="data:image/png;base64,{{ img.bild|b64encode|safe }}" alt="mushroom image">
         {% endfor %}
     {% endfor %}
 
