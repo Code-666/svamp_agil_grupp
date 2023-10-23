@@ -6,10 +6,21 @@
 </head>
 <body>
     <h1>Svampro Galleri</h1>
-    <img src="https://www.nrm.se/images/18.256c741a174b157abc328cf5/1601988334848/Kantarell%20515x515.jpg" alt="">
-    <img src="https://www.nrm.se/images/18.256c741a174b157abc328cf8/1601988334996/L%C3%B6msk%20flugsvamp%20515x515.jpg" alt="">
-    <img src="https://www.nrm.se/images/18.256c741a174b157abc328cfa/1601988335089/Stolt%20fj%C3%A4llskivling%20515x515.jpg" alt="">
-    <img src="https://www.nrm.se/images/18.256c741a174b157abc328cf7/1601988334952/Koralltaggsvamp%20515x515.jpg" alt="">
+    <h2>Här kan ni se ett utval av svampar som går att hitta a Sverige!</h2>
+
+    {% for mushroom in mushrooms %}
+        {% if mushroom.giftig == 'ja' %}
+        <p> Svampen {{ mushroom.namn }} är giftig  </p>
+        {% else %}
+        <p> Svampen {{ mushroom.namn }} är säker att äta  </p>  
+        {% endif %}
+
+        {% for img in mushroom.bild %}
+        <a href="{{ url_for('result',  mushroom_name=mushroom.namn) }}">
+            <img src="data:image/png;base64,{{ img.bild|b64encode|safe }}" alt="mushroom image">
+        </a>
+        {% endfor %}
+    {% endfor %}
 
 </body>
 </html>
