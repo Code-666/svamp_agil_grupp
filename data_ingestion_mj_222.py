@@ -24,7 +24,7 @@ def insert_data():
             latin="cantharellus pallens",
             giftig="nej",
             färg="blekgul",
-            hatt="konvex",
+            hatt="trattformad",
             skivor="nedlöpande",
             fot="sammanfogad",
             ring="NA",
@@ -39,9 +39,9 @@ def insert_data():
             hatt="konvex",
             skivor="fria",
             fot="lång",
-            ring="tunn",
+            ring="tjock",
             strumpa="säcklik",
-            lukt="obehaglig",
+            lukt="söt",
         ),
     ]
 

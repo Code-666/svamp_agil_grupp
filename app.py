@@ -6,21 +6,24 @@ import base64
 from flask_sqlalchemy import SQLAlchemy
 
 
-
-
 # our main page
 @app.route("/")
-@app.route('/mainpage')
+@app.route("/mainpage")
 def mainpage():
-    return render_template('index.html')
+    return render_template("index.html")
 
-@app.route('/galleri')
+
+@app.route("/galleri")
 def galleri():
-    return render_template('galleri.html')
+    mushrooms = MushroomFilter.query.all()
+    return render_template("galleri.html", mushrooms=mushrooms)
 
-@app.route('/dagens_svamp')
+
+@app.route("/dagens_svamp")
 def dagens_svamp():
-    return render_template('dagens_svamp.html')
+    return render_template("dagens_svamp.html")
+
+
 # creates a function that converts the binary images on the frontend (in the jinja2)
 def b64encode(s):
     return base64.b64encode(s).decode("utf-8")
@@ -52,7 +55,7 @@ def min_svamp():
         hatt = request.form.get("hatt")
         skivor = request.form.get("skivor")
         fot = request.form.get("fot")
-        strumpa = request.form.get("strumpa")
+        # strumpa = request.form.get("strumpa")
         lukt = request.form.get("lukt")
 
         # This does a dynamic query based on what the user has selected in the form
@@ -66,8 +69,8 @@ def min_svamp():
             query = query.filter_by(skivor=skivor)
         if fot and fot != "inget/annat":
             query = query.filter_by(fot=fot)
-        if strumpa and strumpa != "inget/annat":
-            query = query.filter_by(strumpa=strumpa)
+        # if strumpa and strumpa != "inget/annat":
+        #     query = query.filter_by(strumpa=strumpa)
         if lukt and lukt != "inget/annat":
             query = query.filter_by(lukt=lukt)
 
