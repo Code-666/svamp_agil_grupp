@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif; /* Ställer in typsnittet till Arial eller sans-serif om Arial inte är tillgängligt */
+    font-size: 16px; /* Ställer in textstorleken till 16 pixlar */
+    background-color: white; /* Ställer bakgrundsfärgen till vit */
+}
+
+input[type="radio"] {
+    margin-right: 5px; /* Lägger till ett högermarginalutrymme på 5 pixlar för radioinput */
+    cursor: pointer; /* Ändrar markörens utseende till en pekande hand när den svävar över radioinput */
+}
+
+form {
+    max-width: 550px; /* Begränsar bredden på formuläret till högst 550 pixlar */
+    margin: 0 auto; /* Centrerar formuläret horisontellt på sidan */
+}
+
+p {
+    text-align: center; /* Centrerar texten inom <p>-elementen */
+}
+
+a {
+    color: #0077b6; /* Ställer färgen på textlänkar till en blå nyans (#0077b6) */
+    text-decoration: none; /* Tar bort understrykning från textlänkar */
+}
+
+a:hover {
+    text-decoration: underline; /* Lägger till understrykning när musen svävar över en textlänk */
+}
+
+img {
+    display: block; /* Gör bilden till ett blockelement */
+    margin: 0 auto; /* Centrerar bilden horisontellt */
+}
+
+/* varje box */
+fieldset {
+    border: 5px solid #9900FF; /* Skapar en svart solid ram med 5 pixlars tjocklek runt fieldset-elementet */
+    padding: 15px; /* Lägger till 15 pixlars utfyllnad inuti fieldset */
+    border-radius: 100px; /* Skapar en rundad hörnradie på 100 pixlar för fieldset */
+    margin: 20px; /* Lägger till 20 pixlars marginal runt fieldset */
+    background-color: #ffffff; /* Ställer bakgrundsfärgen till vit för fieldset */
+    box-shadow: 0px 0px 20px #00FF00; /* Lägger till en skugga med färgen #00FF00 och en bredd på 20 pixlar */
+}
+
+/* varje rubrik i varje box */
+legend {
+    font-size: 20px; /* Ställer textstorleken för legend till 20 pixlar */
+    color: #000000; /* Ställer textfärgen till svart */
+    margin-bottom: 5px; /* Lägger till 5 pixlars marginal under legend */
+    background-color: #ffffff; /* Ställer bakgrundsfärgen till vit för legend */
+    padding: 5px 10px; /* Lägger till 5 pixlars utfyllnad på toppen och botten och 10 pixlars utfyllnad på sidorna av legend */
+    border-radius: 5px; /* Skapar en rundad hörnradie på 5 pixlar för legend */
+    box-shadow: 0px 0px 5px #00FF00; /* Lägger till en skugga med färgen #00FF00 och en bredd på 5 pixlar */
+    border: 5px solid #9900FF; /* Skapar en svart solid ram med 5 pixlars tjocklek runt legend */
+    font-weight: bold; /* Gör texten fetstil */
+}
+
+/* Uppdaterad stil för submit-knappen */
+input[type="submit"] {
+    background-color: white; /* Ställer bakgrundsfärgen till vit för submit-knappen */
+    border: 4px #9900FF solid; /* Skapar en svart solid ram med 4 pixlars tjocklek runt submit-knappen */
+    padding: 10px 20px; /* Lägger till 10 pixlars utfyllnad på toppen och botten och 20 pixlars utfyllnad på sidorna av submit-knappen */
+    border-radius: 100px; /* Skapar en rundad hörnradie på 100 pixlar för submit-knappen */
+    cursor: pointer; /* Ändrar markörens utseende till en pekande hand när den svävar över submit-knappen */
+    font-size: 20px; /* Ställer textstorleken för submit-knappen till 20 pixlar */
+    margin: 20px; /* Lägger till 20 pixlars marginal runt submit-knappen */
+    box-shadow: 0px 0px 20px #00FF00; /* Lägger till en skugga med färgen #9900FF och en bredd på 20 pixlar */
+}
+
+

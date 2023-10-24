@@ -1,6 +1,5 @@
 body {
     color: #A0A0A0; /* Svart bakgrund */
-    height: 100vh; /* Ange kroppens höjd till 100% av fönstret */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centrera vertikalt */
@@ -9,7 +8,7 @@ body {
 }
 
 .identifera-svamp {
-    color: red; /* Standard textfärg (röd) */
+    color: #9900FF; /* Standard textfärg (röd) */
     display: block; /* Göra elementen block så att de är under varandra */
     margin: 10px 0; /* Mellanrum mellan elementen */
     text-decoration: none; /* Ta bort linjerna under texten */
@@ -18,7 +17,7 @@ body {
 }
 
 .identifera-svamp:hover {
-    color: #A020F0; /* Ändra färgen till violett vid hovring */
+    color: #00FF00; /* Ändra färgen till violett vid hovring */
 }
 
 .svat_vit {

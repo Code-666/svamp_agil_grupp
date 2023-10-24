@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>File Upload Example</title>
+    <title>Svampro Sök Svamp</title>
     <style>
     </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/min_svamp_css.css')}}">
 </head>
 <body>
 
@@ -17,29 +18,36 @@
 <form method="post">
 
   <fieldset>
+    <p>Färg avser svampens hatt</p>
     <legend>Färg</legend>
-    <input type="radio" id="brun" name="färg" value="brun">
-    <label for="brun">Brun</label>
+    <input type="radio" id="ljusbrun" name="färg" value="ljusbrun">
+    <label for="ljusbrun">Ljusbrun</label>
+    <input type="radio" id="mörkbrun" name="färg" value="mörkbrun">
+    <label for="mörkbrun">Mörkbrun</label>
+    <input type="radio" id="röd" name="färg" value="röd">
+    <label for="röd">Röd</label>
     <input type="radio" id="blekgul" name="färg" value="blekgul">
     <label for="blekgul">Blekgul</label>
-    <input type="radio" id="green" name="färg" value="FYLL I!">
-    <label for="green">FYLL I!</label>
-    <input type="radio" id="other" name="färg" value="FYLL I!">
-    <label for="other">FYLL I!</label>
+    <input type="radio" id="orange" name="färg" value="orange">
+    <label for="orange">Orange</label>
+    <input type="radio" id="svart" name="färg" value="svart">
+    <label for="svart">Svart</label>
+    <input type="radio" id="gräddfärgad" name="färg" value="gräddfärgad">
+    <label for="gräddfärgad">Gräddfärgad</label>
     <input type="radio" id="inget/annat" name="färg" value="inget/annat">
     <label for="inget/annat">Inget/Annat</label>
   </fieldset>
 
   <fieldset>
     <legend>Hatt</legend>
-    <input type="radio" id="välvd" name="hatt" value="välvd">
-    <label for="välvd">Välvd</label>
     <input type="radio" id="konvex" name="hatt" value="konvex">
     <label for="konvex">Konvex</label>
-    <input type="radio" id="green" name="hatt" value="FYLL I!">
-    <label for="green">FYLL I!</label>
-    <input type="radio" id="other" name="hatt" value="FYLL I!">
-    <label for="other">FYLL I!</label>
+    <input type="radio" id="konkav" name="hatt" value="konkav">
+    <label for="konkav">Konkav</label>
+    <input type="radio" id="trattformad" name="hatt" value="trattformad">
+    <label for="trattformad">Trattformad</label>
+    <input type="radio" id="blomkål" name="hatt" value="blomkål">
+    <label for="blomkål">Blomkål</label>
     <input type="radio" id="inget/annat" name="hatt" value="inget/annat">
     <label for="inget/annat">Inget/Annat</label>
   </fieldset>
@@ -52,8 +60,12 @@
     <label for="rör">Rör</label>
     <input type="radio" id="fria" name="skivor" value="fria">
     <label for="fria">Fria</label>
-    <input type="radio" id="other" name="skivor" value="FYLL I!">
-    <label for="other">FYLL I!</label>
+    <input type="radio" id="Täta" name="skivor" value="Täta">
+    <label for="Täta">Täta</label>
+    <input type="radio" id="glesa" name="skivor" value="glesa">
+    <label for="glesa">Glesa</label>
+    <input type="radio" id="rynkig" name="skivor" value="rynkig">
+    <label for="rynkig">Rynkig</label>
     <input type="radio" id="inget/annat" name="skivor" value="inget/annat">
     <label for="inget/annat">Inget/Annat</label>
   </fieldset>
@@ -66,8 +78,14 @@
     <label for="tofsig">Tofsig</label>
     <input type="radio" id="lång" name="fot" value="lång">
     <label for="lång">Lång</label>
-    <input type="radio" id="other" name="fot" value="FYLL I!">
-    <label for="other">FYLL I!</label>
+    <input type="radio" id="tjock" name="fot" value="tjock">
+    <label for="tjock">Tjock</label>
+    <input type="radio" id="sidoställd" name="fot" value="sidoställd">
+    <label for="sidoställd">Sidoställd</label>
+    <input type="radio" id="sammanfogad" name="fot" value="sammanfogad">
+    <label for="sammanfogad">Sammanfogad</label>
+    <input type="radio" id="rotlik" name="fot" value="rotlik">
+    <label for="rotlik">Rotlik</label>
     <input type="radio" id="inget/annat" name="fot" value="inget/annat">
     <label for="inget/annat">Inget/Annat</label>
   </fieldset>
@@ -78,45 +96,39 @@
     <label for="pruinös">Pruinös</label>
     <input type="radio" id="tunn" name="ring" value="tunn">
     <label for="tunn">Tunn</label>
-    <input type="radio" id="green" name="ring" value="FYLL I!">
-    <label for="green">FYLL I!</label>
-    <input type="radio" id="other" name="ring" value="FYLL I!">
-    <label for="other">FYLL I!</label>
+    <input type="radio" id="tjock" name="ring" value="tjock">
+    <label for="tjock">Tjock!</label>
     <input type="radio" id="inget/annat" name="ring" value="inget/annat">
     <label for="inget/annat">Inget/Annat</label>
   </fieldset>
 
-  <fieldset>
+  <!-- <fieldset>
     <legend>Strumpa</legend>
     <input type="radio" id="säcklik" name="strumpa" value="säcklik">
     <label for="säcklik">Säcklik</label>
-    <input type="radio" id="red" name="strumpa" value="FYLL I!">
-    <label for="tofsig">FYLL I!</label>
-    <input type="radio" id="green" name="strumpa" value="FYLL I!">
-    <label for="green">FYLL I!</label>
-    <input type="radio" id="other" name="strumpa" value="FYLL I!">
-    <label for="other">FYLL I!</label>
     <input type="radio" id="inget/annat" name="strumpa" value="inget/annat">
     <label for="inget/annat">Inget/Annat</label>
-  </fieldset>
+  </fieldset> -->
 
   <fieldset>
     <legend>Lukt</legend>
-    <input type="radio" id="mjölaktig" name="lukt" value="mjölaktig">
-    <label for="mjölaktig">Mjölaktig</label>
+    <input type="radio" id="mjölig" name="lukt" value="mjölig">
+    <label for="mjölig">Mjölig</label>
     <input type="radio" id="fruktig" name="lukt" value="fruktig">
     <label for="fruktig">Fruktig</label>
-    <input type="radio" id="söt/frän" name="lukt" value="söt/frän">
-    <label for="söt/frän">Söt/Frän</label>
-    <input type="radio" id="other" name="lukt" value="FYLL I!">
-    <label for="other">FYLL I!</label>
+    <input type="radio" id="söt" name="lukt" value="söt">
+    <label for="söt">Söt</label>
+    <input type="radio" id="skaldjur" name="lukt" value="skaldjur">
+    <label for="skaldjur">Skaldjur</label>
+    <input type="radio" id="stenkol" name="lukt" value="stenkol">
+    <label for="stenkol">Stenkol</label>
+    <input type="radio" id="luktlös" name="lukt" value="luktlös">
+    <label for="luktlös">Luktlös</label>
     <input type="radio" id="inget/annat" name="lukt" value="inget/annat">
     <label for="inget/annat">Inget/Annat</label>
   </fieldset>
 
-
-
-  <input type="submit" value="Find your mushroom">
+  <input type="submit" value="Hitta din Svamp!">
 </form>
 </div>
 
@@ -131,27 +143,33 @@
 -->
 {% if form_submitted %}
   {% if mushrooms %}
+  <p>Här är några svampar som passar in på er beskrivning:</p>
     {% for mushroom in mushrooms %}
-      <p> {{ mushroom.namn }} </p>
+      {% if mushroom.giftig == 'ja' %}
+      <p> {{ mushroom.namn | capitalize}} är giftig. På latin heter svampen: <i>{{ mushroom.latin }}</i>  </p>
+    {% else %}
+      <p> {{ mushroom.namn | capitalize}} är ätbar. På latin heter svampen: <i>{{ mushroom.latin }}</i>  </p> 
+    {% endif %}
 
       {% for img in mushroom.bild %}
-        <a href="{{ url_for('result',  mushroom_name=mushroom.namn) }}">
+        <!-- <a href="{{ url_for('result',  mushroom_name=mushroom.namn) }}">
           <img src="data:image/png;base64,{{ img.bild|b64encode|safe }}" alt="mushroom image">
-        </a>
+        </a> -->
+        <img src="data:image/png;base64,{{ img.bild|b64encode|safe }}" alt="mushroom image">
       {% endfor %}
-        {% if mushroom.giftig == 'ja' %}
+        <!-- {% if mushroom.giftig == 'ja' %}
           <p> {{ mushroom.namn }} är giftig  </p>
         {% else %}
           <p> {{ mushroom.namn }} är säker att äta  </p>  
-        {% endif %}
+        {% endif %} -->
     {% endfor %}
   {% else %}
-    <p>Tyvärr, inga svampar som matchar dina sökvillkor.</p>
-    <img src="{{ url_for('static', filename='pics/svampar.jpg') }}" alt="null search results">
+    <p>Tyvärr, inga svampar matchar dina sökvillkor.</p>
+    <img src="{{ url_for('static', filename='pics/svampHjälp.png') }}" alt="null search results">
   {% endif %}
 {% else %}
   <p>Välkommen! Vänligen sök efter en svamp</p>
-  <img src="{{ url_for('static', filename='pics/svampar.jpg') }}" alt="welcome image">
+  <img src="{{ url_for('static', filename='pics/svampHjälp.png') }}" alt="welcome image">
 {% endif %}
 
 
