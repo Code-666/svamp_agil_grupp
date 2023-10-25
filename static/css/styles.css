@@ -5,6 +5,7 @@ body {
     justify-content: center; /* Centrera vertikalt */
     align-items: flex-start; /* Vänsterjustera innehållet */
     margin-left: 50px; /* Lägg till en vänstermarginal om så önskas */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .identifera-svamp {
@@ -17,7 +18,7 @@ body {
 }
 
 .identifera-svamp:hover {
-    color: #00FF00; /* Ändra färgen till violett vid hovring */
+    color: #000000; /* Ändra färgen till violett vid hovring */
 }
 
 .svat_vit {
@@ -28,4 +29,31 @@ body {
     right: 100; /* Justera den till höger */
     top: 50; /* Justera den uppåt */
     opacity: 0.7; /* Ange opacitet för suddningseffekten */
+}
+
+
+p {
+    color: black;
+    font-size: large;
+}
+
+h1 {
+    color: #9900FF;
+    font-size: 100;
+
+    
+}
+
+h2 {
+    color: #9900FF;
+    font-size: 25;
+ 
+    
+}
+
+p {
+    font-size: 20;
+}
+footer {
+    color: #9900FF;
 }
