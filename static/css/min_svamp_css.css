@@ -37,7 +37,7 @@ img {
 fieldset {
     border: 5px solid #9900FF; /* Skapar en svart solid ram med 5 pixlars tjocklek runt fieldset-elementet */
     padding: 15px; /* Lägger till 15 pixlars utfyllnad inuti fieldset */
-    border-radius: 100px; /* Skapar en rundad hörnradie på 100 pixlar för fieldset */
+    border-radius: 10px; /* Skapar en rundad hörnradie på 100 pixlar för fieldset */
     margin: 20px; /* Lägger till 20 pixlars marginal runt fieldset */
     background-color: #ffffff; /* Ställer bakgrundsfärgen till vit för fieldset */
     box-shadow: 0px 0px 20px #000000; /* Lägger till en skugga med färgen #00FF00 och en bredd på 20 pixlar */
