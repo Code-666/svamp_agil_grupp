@@ -23,6 +23,11 @@ def galleri():
 def dagens_svamp():
     return render_template("dagens_svamp.html")
 
+@app.route("/ai")
+def ai():
+    #mymodel = load_model('mushroom_model')
+    myModel = ["Magnus", "John", "Sebastian", "Alejandro"]
+    return render_template("ai.html", myModel=myModel)
 
 # creates a function that converts the binary images on the frontend (in the jinja2)
 def b64encode(s):

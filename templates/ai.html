@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI</title>
+  <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<h1> Svampro </h1>
+<a href="/mainpage" class="identifera-svamp">Startsida</a>
+<a href="/min_svamp" class="identifera-svamp">Identifera-svamp</a>
+<a href="/galleri" class="identifera-svamp">Galleri</a>
+<h2>Här kan du fråga svampfrågor till våran AI</h2>
+<div>
+    <input type="text" placeholder="Skriv här!">
+    <p>
+        "här kommer de stå svaret jepp! jajamensan! jinja!"
+        {% for text in myModel %}
+        <p>
+            {{text}}
+        </p>
+        {% endfor %}
+    </p>
+    <input type="submit" value="Hitta din Svamp!">
+    <footer>
+
+    </footer>
+</div>
+
+</body>
+</html>

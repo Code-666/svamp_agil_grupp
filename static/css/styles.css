@@ -5,6 +5,7 @@ body {
     justify-content: center; /* Centrera vertikalt */
     align-items: flex-start; /* Vänsterjustera innehållet */
     margin-left: 50px; /* Lägg till en vänstermarginal om så önskas */
+    background-color: #FAD6A5;
 }
 
 .identifera-svamp {
