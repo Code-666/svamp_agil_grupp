@@ -3,10 +3,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Svampro</title>
+    <link rel="stylesheet" href="../static/css/galleri.css">
 </head>
 <body>
     <h1>Svampro Galleri</h1>
-    <h2>Här kan ni se ett utval av svampar som går att hitta a Sverige!</h2>
+    <a href="/mainpage" class="identifera-svamp">Startsida</a>
+    <a href="/min_svamp" class="identifera-svamp">Identifera-svamp</a>
+    
+    <h2>Här kan ni se ett utval av svampar som går att hitta i Sverige!</h2>
 
     {% for mushroom in mushrooms %}
         {% if mushroom.giftig == 'ja' %}
@@ -16,9 +20,10 @@
         {% endif %}
 
         {% for img in mushroom.bild %}
-        <a href="{{ url_for('result',  mushroom_name=mushroom.namn) }}">
+        <!-- <a href="{{ url_for('result',  mushroom_name=mushroom.namn) }}">
             <img src="data:image/png;base64,{{ img.bild|b64encode|safe }}" alt="mushroom image">
-        </a>
+        </a> -->
+        <img src="data:image/png;base64,{{ img.bild|b64encode|safe }}" alt="mushroom image">
         {% endfor %}
     {% endfor %}
 
