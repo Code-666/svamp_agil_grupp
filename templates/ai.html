@@ -1,31 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>AI</title>
-  <link rel="stylesheet" href="../static/css/ai.css">
+    <title>Image Classification</title>
 </head>
 <body>
-<h1> Svampro </h1>
-<a href="/mainpage" class="identifera-svamp">Startsida</a>
-<a href="/min_svamp" class="identifera-svamp">Identifera-svamp</a>
-<a href="/galleri" class="identifera-svamp">Galleri</a>
-<h2>Här kan du fråga svampfrågor till våran AI</h2>
-<div>
-    <input type="text" placeholder="Skriv här!">
-    <p>
-        "här kommer de stå svaret jepp! jajamensan! jinja!"
-        {% for text in myModel %}
-        <p>
-            {{text}}
-        </p>
-        {% endfor %}
-    </p>
-    <input type="submit" value="Hitta din Svamp!">
-    <footer>
+    <h1>Image Classification</h1>
 
-    </footer>
-</div>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" />
+        <input type="submit" value="Upload and Predict" />
+    </form>
 
+    <h2>Prediction Result</h2>
+    <p id="prediction"></p>
+
+    <img src="" id="uploaded-image" style="display: none; max-width: 300px;">
+
+    <script>
+        const form = document.querySelector('form');
+        const predictionElement = document.getElementById('prediction');
+        const imageElement = document.getElementById('uploaded-image');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+                predictionElement.textContent = `Predicted class: ${data.class}, Confidence: ${data.confidence}`;
+                imageElement.style.display = 'block';
+                imageElement.src = URL.createObjectURL(formData.get('file'));
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+    </script>
 </body>
 </html>
