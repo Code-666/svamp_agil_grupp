@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Classification</title>
+    <title>Bildklassificering</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/min_svamp_css.css')}}">
 </head>
 <body>
@@ -34,7 +34,7 @@
                     body: formData
                 });
                 const data = await response.json();
-                predictionElement.textContent = `Predicted class: ${data.class}, Confidence: ${data.confidence}`;
+                predictionElement.textContent = `Förutspådd svamp: ${data.class}`;
                 imageElement.style.display = 'block';
                 imageElement.src = URL.createObjectURL(formData.get('file'));
             } catch (error) {
