@@ -3,6 +3,12 @@
 <head>
     <title>Bildklassificering</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/min_svamp_css.css')}}">
+    <style>
+        h1 {
+        text-align: center;
+        color: #9900FF;
+        }
+    </style>
 </head>
 <body>
     <h1>Bildklassificering</h1>
@@ -13,10 +19,11 @@
         <input type="file" name="file" accept="image/*" />
         <input type="submit" value="Upload and Predict" />
     </form>
-    <div>
-        <h3 id="prediction"></h3>
-        <img src="" id="uploaded-image" style="display: none; max-width: 300px;">
-    </div>
+
+    <p id="prediction"></p>
+
+    <img src="" id="uploaded-image" style="display: none; max-width: 300px;">
+
     <script>
         const form = document.querySelector('form');
         const predictionElement = document.getElementById('prediction');
