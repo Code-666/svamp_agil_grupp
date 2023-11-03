@@ -11,19 +11,16 @@ import numpy as np
 import PIL
 from tensorflow.keras.models import load_model
 
-
 # our main page
 @app.route("/")
 @app.route("/mainpage")
 def mainpage():
     return render_template("index.html")
 
-
 @app.route("/galleri")
 def galleri():
     mushrooms = MushroomFilter.query.all()
     return render_template("galleri.html", mushrooms=mushrooms)
-
 
 @app.route("/dagens_svamp")
 def dagens_svamp():

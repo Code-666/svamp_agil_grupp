@@ -122,4 +122,27 @@ h1 {
     color: #ffffff; /* Färg för text vid hovring */
 }
 
+/* För bild-input på AI-sidan */
+#input_img {
+    background-color: white; /* Ställer bakgrundsfärgen till vit */
+    border: 4px #9900FF solid; /* Skapar en svart solid ram med 4 pixlars tjocklek */
+    padding: 10px 20px; /* Lägger till 10 pixlars utfyllnad på toppen och botten och 20 pixlars utfyllnad*/
+    border-radius: 100px; /* Skapar en rundad hörnradie på 100 pixlar */
+    cursor: pointer; /* Ändrar markörens utseende till en pekande hand när den svävar över */
+    font-size: 12px; /* Ställer textstorleken till 20 pixlar */
+    margin: 20px; /* Lägger till 20 pixlars marginal */
+    box-shadow: 0px 0px 20px #000000; /* Lägger till en skugga med färgen #9900FF och en bredd på 20 pixlar */
+    font-weight: bold;
+}
 
+/* Infon på AI-sidan */
+.AI-info {
+    text-align: center; /* Centrerar texten inom <p>-elementen */
+    font-weight: bold;
+    font-size: 20px;
+}
+/* Byt färg på ordet "Tip" i infon på AI-sidan */
+.AI-info b {
+    color: #9900FF;
+    font-size: 25px;
+}

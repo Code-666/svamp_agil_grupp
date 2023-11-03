@@ -10,7 +10,7 @@ body {
 }
 
 .identifera-svamp {
-    color: #228b22; /* Standard textfärg (röd) */
+    color: #5D8450; /* Standard textfärg (röd) */
     display: block; /* Göra elementen block så att de är under varandra */
     margin: 10px 0; /* Mellanrum mellan elementen */
     text-decoration: none; /* Ta bort linjerna under texten */
@@ -60,7 +60,7 @@ footer {
 }
 
 a {
-    color: #228b22; /* Färg för textlänkar */
+    color: #5D8450; /* Färg för textlänkar */
     text-decoration: none; /* Ta bort understrykning från textlänkar */
     padding: 10px 20px; /* Lägg till utfyllnad för knappform */
     background-color: white; /* Bakgrundsfärg för knapp */
@@ -76,6 +76,6 @@ a {
 }
 
 a:hover {
-    background-color: #228b22; /* Bakgrundsfärg för länken vid hovring */
+    background-color: #5D8450; /* Bakgrundsfärg för länken vid hovring */
     color: #ffffff; /* Färg för text vid hovring */
 }

@@ -15,14 +15,23 @@
     <a href="/mainpage" class="identifera-svamp">Startsida</a>
     <a href="/galleri" class="identifera-svamp">Galleri</a>
 
+    <div class="AI-info">
+        <p>Denna AI-model kan gissa om det är en kantarell eller en flugsvamp på en bild.</p>
+        <p>Gör så här: klicka på "välj fil" och välj en bild på en kantarell eller en flugsvamp och sedan klicka på "Ladda upp" knappen nedan.</p>
+    </div>
+
     <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*" />
+        <input type="file" id="input_img" name="file" accept="image/*" />
         <input type="submit" value="Ladda upp" />
     </form>
 
     <div>
         <h3 id="prediction"></h3>
         <img src="" id="uploaded-image" style="display: none; max-width: 300px;">
+    </div>
+
+    <div class="AI-info">
+        <p><b>Tip:</b> Om du använder mobilen kan du ta en bild med kameran och ladda upp.</p>
     </div>
 
     <script>
