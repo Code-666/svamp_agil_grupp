@@ -10,7 +10,7 @@ body {
 }
 
 .identifera-svamp {
-    color: #9900FF; /* Standard textfärg (röd) */
+    color: #228b22; /* Standard textfärg (röd) */
     display: block; /* Göra elementen block så att de är under varandra */
     margin: 10px 0; /* Mellanrum mellan elementen */
     text-decoration: none; /* Ta bort linjerna under texten */
@@ -19,7 +19,7 @@ body {
 }
 
 .identifera-svamp:hover {
-    color: #000000; /* Ändra färgen till violett vid hovring */
+    color: #ffffff; /* Ändra färgen till violett vid hovring */
 }
 
 .svat_vit {
@@ -57,4 +57,25 @@ p {
 }
 footer {
     color: #9900FF;
+}
+
+a {
+    color: #228b22; /* Färg för textlänkar */
+    text-decoration: none; /* Ta bort understrykning från textlänkar */
+    padding: 10px 20px; /* Lägg till utfyllnad för knappform */
+    background-color: white; /* Bakgrundsfärg för knapp */
+    border: 2px solid black; /* Kantlinje för knapp */
+    border-radius: 5px; /* Rundade hörn för knapp */
+    display: inline-block; /* Visa länken som en block för att kunna justera storlek och utfyllnad */
+    margin: 10px; /* Utrymme mellan länkarna */
+    font-weight: bold; /* Fetstil text */
+    margin: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+
+}
+
+a:hover {
+    background-color: #228b22; /* Bakgrundsfärg för länken vid hovring */
+    color: #ffffff; /* Färg för text vid hovring */
 }
