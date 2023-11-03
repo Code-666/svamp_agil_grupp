@@ -1,9 +1,15 @@
 from flask import Flask
-from flask import render_template, request, flash, redirect, url_for, session
+from flask import render_template, request, flash, redirect, url_for, session, jsonify
 from models import MushroomFilter, MushroomImage, MushroomInfo, db, app
 from io import BytesIO
 import base64
 from flask_sqlalchemy import SQLAlchemy
+
+from tensorflow import keras
+from tensorflow.keras.preprocessing import image
+import numpy as np
+import PIL
+from tensorflow.keras.models import load_model
 
 
 # our main page
@@ -23,6 +29,48 @@ def galleri():
 def dagens_svamp():
     return render_template("dagens_svamp.html")
 
+@app.route("/ai")
+def ai():
+    return render_template("ai.html")
+
+@app.route('/upload', methods=['POST'])
+def upload_image():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'})
+
+    file = request.files['file']
+
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'})
+
+    if file:
+        try:
+            # Read the uploaded image using PIL or any image processing library
+            image_data = file.read()
+            img = image.load_img(BytesIO(image_data), target_size=(160, 160))
+
+            # Preprocess the image
+            img = image.img_to_array(img)
+            img = np.expand_dims(img, axis=0)
+
+            model = load_model('models/flugVSkant.h5')
+
+            # Make a prediction
+            prediction = model.predict(img)
+            class_index = np.argmax(prediction)
+
+            # Retrieve class labels or categories
+            class_labels = ["Flug svamp", "Kantarell"]  # Replace with your own class labels
+
+            print(prediction)
+            result = {
+                'class': class_labels[class_index],
+                'confidence': str(prediction[0][class_index])
+            }
+
+            return jsonify(result)
+        except Exception as e:
+            return jsonify({'error': str(e)})
 
 # creates a function that converts the binary images on the frontend (in the jinja2)
 def b64encode(s):

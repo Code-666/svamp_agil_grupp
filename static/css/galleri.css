@@ -1,0 +1,50 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #FAD6A5;
+}
+
+h1 {
+    text-align: center;
+    font-size: 100;
+    color: #9900FF;
+}
+
+h2 {
+    text-align: center;
+    font-size: 25;
+    color: black;
+}
+p {
+    text-align: center;
+    font-size: 25;
+}
+
+img {
+    display: block; /* Gör bilden till ett blockelement */
+    margin: 0 auto; /* Centrerar bilden horisontellt */
+    width: 500px;
+    height: 250px;
+}
+
+.identifera-svamp {
+    color: #9900FF; /* Färg för textlänkar */
+    text-decoration: none; /* Ta bort understrykning från textlänkar */
+    padding: 10px 20px; /* Lägg till utfyllnad för knappform */
+    background-color: white; /* Bakgrundsfärg för knapp */
+    border: 2px solid black; /* Kantlinje för knapp */
+    border-radius: 5px; /* Rundade hörn för knapp */
+    display: inline-block; /* Visa länken som en block för att kunna justera storlek och utfyllnad */
+    margin: 10px; /* Utrymme mellan länkarna */
+    font-weight: bold; /* Fetstil text */
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    
+    
+}
+
+.identifera-svamp:hover {
+    background-color: #9900FF; /* Bakgrundsfärg för länken vid hovring */
+    color: #ffffff; /* Färg för text vid hovring */
+}

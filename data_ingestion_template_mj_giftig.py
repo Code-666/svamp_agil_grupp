@@ -48,7 +48,7 @@ def insert_data():
             latin="cortinarius callisteus",
             giftig="ja",
             färg="blekgul",
-            hatt="",
+            hatt="NA",
             skivor="täta",
             fot="Sidoställd",
             ring="NA",
