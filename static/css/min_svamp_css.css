@@ -58,16 +58,16 @@ legend {
 
 /* Uppdaterad stil för submit-knappen */
 input[type="submit"] {
-    background-color: white; /* Ställer bakgrundsfärgen till vit för submit-knappen */
-    border: 4px #9900FF solid; /* Skapar en svart solid ram med 4 pixlars tjocklek runt submit-knappen */
-    padding: 10px 20px; /* Lägger till 10 pixlars utfyllnad på toppen och botten och 20 pixlars utfyllnad på sidorna av submit-knappen */
-    border-radius: 100px; /* Skapar en rundad hörnradie på 100 pixlar för submit-knappen */
-    cursor: pointer; /* Ändrar markörens utseende till en pekande hand när den svävar över submit-knappen */
-    font-size: 20px; /* Ställer textstorleken för submit-knappen till 20 pixlar */
-    margin: 20px; /* Lägger till 20 pixlars marginal runt submit-knappen */
-    box-shadow: 0px 0px 20px #000000; /* Lägger till en skugga med färgen #9900FF och en bredd på 20 pixlar */
+    background-color: white;
+    border: 4px #9900FF solid;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 20px;
+    box-shadow: 0px 0px 20px #000000;
+    color: #000; /* Add this line to explicitly set the text color */
 }
-
 
 h1 {
     text-align: center;
